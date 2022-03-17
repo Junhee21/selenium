@@ -6,17 +6,13 @@ const chrome = require('selenium-webdriver/chrome');
     width: 1180,
     height: 480
   };
+  require('dotenv').config();
+  const driver = await new Builder().forBrowser('chrome').build(); //필요?
 
-  const driver = await new Builder().forBrowser('chrome').build();
-
-  const LandingHomePage = require('./modules/noLogin/landingHomePage.js');
-
-  const landingHomePage = new LandingHomePage(driver);
+  const SignInSignOutGoogleId = require('./tests/SignInSignOutGoogleId');
 
   try{
-    await landingHomePage.test()
-    // await signinPagetest.test()
-    // await portalpageTest.test()
+    await new SignInSignOutGoogleId(driver).test()
   } finally {
     driver.quit()
   }
