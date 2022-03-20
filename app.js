@@ -1,18 +1,16 @@
 const { Builder, By, Key, until } = require('selenium-webdriver');
 const chrome = require('selenium-webdriver/chrome');
+require('dotenv').config();
 
 (async function htmlParsing() {
-  const screen = {
-    width: 1180,
-    height: 480
-  };
-  require('dotenv').config();
-  const driver = await new Builder().forBrowser('chrome').build(); //필요?
+  
+  const driver = await new Builder().forBrowser('chrome').build();
+  driver.manage().window().maximize();
 
-  const SignInSignOutGoogleId = require('./tests/SignInSignOutGoogleId');
+  const SignInGoogleAccountTest = require('./tests/RinglePlus/SignInGoogleAccountTest');
 
   try{
-    await new SignInSignOutGoogleId(driver).test()
+    await new SignInGoogleAccountTest(driver, process.env.RINGLE_PAGE).test()
   } finally {
     driver.quit()
   }
