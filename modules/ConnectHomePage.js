@@ -9,7 +9,6 @@ class ConnectHomePage {
     try {
       await this.driver.get(this.page);
       await this.driver.actions().pause(3000).perform();
-      await this.driver.wait(until.urlContains(this.page + '/en/student/landing/home'), 10000);
     } catch {
       console.log("Error - modules/Landing/ConnectHomePage.js")
     } finally {
