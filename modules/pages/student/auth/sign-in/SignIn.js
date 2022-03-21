@@ -22,7 +22,7 @@ class SignIn {
       await this.driver.actions().pause(3000).perform();
       
       // 로그인 후 페이지 확인
-      await this.driver.wait(until.urlContains(this.page + '/en/student/portal/'), 10000);
+      await this.driver.wait(until.urlContains(this.page + '/en/student/portal/home'), 10000);
       await this.driver.actions().pause(3000).perform();
     } catch {
       console.log("Error - modules/pages/student/auth/sign-in/SignIn.js")

@@ -3,6 +3,7 @@ const chrome = require('selenium-webdriver/chrome');
 
 const SignInGoogleAccountTest = require('./tests/RinglePlus/SignInGoogleAccountTest');
 const SignInTest = require('./tests/QA/SignInTest');
+const ReserveLessonTest = require('./tests/QA/ReserveLessonTest');
 
 require('dotenv').config();
 
@@ -13,7 +14,7 @@ require('dotenv').config();
 
   try{
     // await new SignInGoogleAccountTest(driver, process.env.RINGLE_PAGE).test()
-    await new SignInTest(driver, process.env.QA2_PAGE).test()
+    await new ReserveLessonTest(driver, process.env.QA2_PAGE).test()
   } finally {
     driver.quit()
   }
