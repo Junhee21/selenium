@@ -1,10 +1,12 @@
 const { Builder, By, Key, until } = require('selenium-webdriver');
-const chrome = require('selenium-webdriver/chrome');
 
+// 테스트를 불러옴
 const SignInGoogleAccountTest = require('./tests/RinglePlus/SignInGoogleAccountTest');
 const SignInTest = require('./tests/QA/SignInTest');
 const ReserveLessonTest = require('./tests/QA/ReserveLessonTest');
 
+
+// .env 파일을 사용하기 위해
 require('dotenv').config();
 
 (async function htmlParsing() {
