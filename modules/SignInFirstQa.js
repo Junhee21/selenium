@@ -14,7 +14,7 @@ class SignInFirstQa {
       // Enter Password
       xpath = By.xpath('/html/body/div[1]/div/div[2]/div[2]/div[2]/div[2]/div/div/form/div[2]/input');
       await this.driver.findElement(xpath).sendKeys(process.env.QA_FIRST_PW);
-      
+
       // Click Sign In button 
       xpath = By.xpath('/html/body/div[1]/div/div[2]/div[2]/div[2]/div[2]/div/div/form/input[3]')
       let element = await this.driver.findElement(xpath);
@@ -22,7 +22,7 @@ class SignInFirstQa {
       await this.driver.actions().pause(3000).perform();
 
       // 로그인 후 페이지 확인
-      await this.driver.wait(until.urlContains(this.page + '/en/student/landing/home'), 10000);
+      // await this.driver.wait(until.urlContains(this.page + '/en/student/landing/home'), 10000);
     } catch {
       console.log("Error - modules/SignInFirstQa.js")
     } finally {

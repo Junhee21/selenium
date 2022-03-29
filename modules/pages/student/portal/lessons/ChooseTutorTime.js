@@ -50,6 +50,7 @@ class ChooseTutorTime {
                 await this.driver.actions().pause(3000).perform();
               }
             } catch {
+
             }
           }
         }

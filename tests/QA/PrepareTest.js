@@ -9,6 +9,7 @@ const ListenMP3 = require('../../modules/pages/student/portal/lessons/preparatio
 const ChooseClassQuestions = require('../../modules/pages/student/portal/lessons/preparation/ChooseClassQuestions');
 const ReadInsight = require('../../modules/pages/student/portal/lessons/preparation/ReadInsight');
 const OutPreparation = require('../../modules/pages/student/portal/lessons/preparation/OutPreparation');
+const WatchVideo = require('../../modules/pages/student/portal/lessons/preparation/WatchVideo');
 
 class PrepareTest {
   constructor(driver, page) {
@@ -28,6 +29,7 @@ class PrepareTest {
       await new ChooseClassQuestions(this.driver, this.page).test()
       await new ReadInsight(this.driver, this.page).test()
       await new ListenMP3(this.driver, this.page).test()
+      await new WatchVideo(this.driver, this.page).test()
       await new OutPreparation(this.driver, this.page).test()
     } finally {
       console.log("Finish Test")

@@ -9,32 +9,32 @@ class ChooseClassQuestions {
     let xpath = null;
     let element = null;
     try {
-      xpath = By.xpath('/html/body/div/div/div[4]/div/div[3]/div[3]/div/div/div[1]/div[1]/div[1]/button');
+      xpath = By.xpath('/html/body/div/div[4]/div/div[3]/div[3]/div/div/div[1]/div[1]/div[1]/button');
       element = await this.driver.findElement(xpath);
       await this.driver.executeScript("arguments[0].click();", element);
       await this.driver.actions().pause(3000).perform();
 
-      xpath = By.xpath('/html/body/div/div/div[4]/div/div[3]/div[3]/div/div/div[1]/div[2]/div/div[1]/div[1]/div[1]');
+      xpath = By.xpath('/html/body/div/div[4]/div/div[3]/div[3]/div/div/div[1]/div[2]/div/div[1]/div[1]/div[1]')
       element = await this.driver.findElement(xpath);
       await this.driver.executeScript("arguments[0].click();", element);
       await this.driver.actions().pause(3000).perform();
 
-      xpath = By.xpath('/html/body/div/div/div[4]/div/div[3]/div[3]/div/div/div[1]/div[1]/div[2]/button');
+      xpath = By.xpath('/html/body/div/div[4]/div/div[3]/div[3]/div/div/div[1]/div[1]/div[2]/button');
       element = await this.driver.findElement(xpath);
       await this.driver.executeScript("arguments[0].click();", element);
       await this.driver.actions().pause(3000).perform();
 
-      xpath = By.xpath('/html/body/div/div/div[4]/div/div[3]/div[3]/div/div/div[1]/div[2]/div/div[1]/div[1]/div[1]');
+      xpath = By.xpath('/html/body/div/div[4]/div/div[3]/div[3]/div/div/div[1]/div[2]/div/div[1]/div[1]/div[1]');
       element = await this.driver.findElement(xpath);
       await this.driver.executeScript("arguments[0].click();", element);
       await this.driver.actions().pause(3000).perform();
 
-      xpath = By.xpath('/html/body/div/div/div[4]/div/div[3]/div[3]/div/div/div[1]/div[1]/div[3]/button');
+      xpath = By.xpath('/html/body/div/div[4]/div/div[3]/div[3]/div/div/div[1]/div[1]/div[3]/button');
       element = await this.driver.findElement(xpath);
       await this.driver.executeScript("arguments[0].click();", element);
       await this.driver.actions().pause(3000).perform();
 
-      xpath = By.xpath('/html/body/div/div/div[4]/div/div[3]/div[3]/div/div/div[1]/div[2]/div/div[1]/div[1]/div[1]');
+      xpath = By.xpath('/html/body/div/div[4]/div/div[3]/div[3]/div/div/div[1]/div[2]/div/div[1]/div[1]/div[1]');
       element = await this.driver.findElement(xpath);
       await this.driver.executeScript("arguments[0].click();", element);
       await this.driver.actions().pause(3000).perform();
