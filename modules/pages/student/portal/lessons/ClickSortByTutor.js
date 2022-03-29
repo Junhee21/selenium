@@ -9,7 +9,7 @@ class ClickSortByTutor {
     let xpath = null;
     let element = null;
     try {
-      xpath = By.xpath('/html/body/div[1]/div/div[2]/div[1]/div[3]/div/div/div/div[1]/div[1]');
+      xpath = By.xpath('/html/body/div[1]/div[2]/div[1]/div[4]/div/div/div/div[1]/div[1]');
       element = await this.driver.findElement(xpath);
       await this.driver.executeScript("arguments[0].click();", element);
       await this.driver.actions().pause(3000).perform();

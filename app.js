@@ -17,7 +17,6 @@ require('dotenv').config();
     // await new SignInTest(driver, process.env.QA3_PAGE).test()
     await new ReserveLessonTest(driver, process.env.QA3_PAGE).test()
     // await new PrepareTest(driver, process.env.QA3_PAGE).test()
-    driver.quit()
   } catch {
 
   } finally {

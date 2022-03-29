@@ -10,7 +10,7 @@ class ChooseTutorTime {
     let isChoosen = false;
 
     try {
-      let xpath = By.xpath('/html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div/div[1]/div/div/button[3]')
+      let xpath = By.xpath('/html/body/div[1]/div[2]/div/div[2]/div/div[3]/div/div[1]/div/div/button[3]')
       let element = await this.driver.findElement(xpath);
       await this.driver.executeScript("arguments[0].click();", element);
       await this.driver.actions().pause(3000).perform();
@@ -19,7 +19,7 @@ class ChooseTutorTime {
       for (let tutorIter = 1; tutorIter <= 5; tutorIter++) {
         if (isChoosen) break;
 
-        xpath = By.xpath('/html/body/div/div/div[2]/div/div[2]/div/div[2]/div/div/div[3]/div/a[' + tutorIter + ']');
+        xpath = By.xpath('/html/body/div/div[2]/div/div[2]/div/div[2]/div/div/div[3]/div/a[' + tutorIter + ']');
         element = await this.driver.findElement(xpath);
         await this.driver.executeScript("arguments[0].click();", element);
         await this.driver.actions().pause(3000).perform();
@@ -33,18 +33,18 @@ class ChooseTutorTime {
             if (isChoosen) break;
 
             try {
-              xpath = By.xpath('/html/body/div/div/div[2]/div/div[2]/div/div[3]/div/div[2]/div/div[2]/div/div[2]/div/div/div/div[' + dayIter + ']/div[' + timeIter + ']/div[3]/div');
+              xpath = By.xpath('/html/body/div/div[2]/div/div[2]/div/div[3]/div/div[2]/div/div[2]/div/div[2]/div/div/div/div[' + dayIter + ']/div[' + timeIter + ']/div[3]/div');
               let text = await this.driver.findElement(xpath).getText();
 
               if (text === 'Available') {
                 isChoosen = true;
-                xpath = By.xpath('/html/body/div/div/div[2]/div/div[2]/div/div[3]/div/div[2]/div/div[2]/div/div[2]/div/div/div/div[' + dayIter + ']/div[' + timeIter + ']/div[1]')
+                xpath = By.xpath('/html/body/div/div[2]/div/div[2]/div/div[3]/div/div[2]/div/div[2]/div/div[2]/div/div/div/div[' + dayIter + ']/div[' + timeIter + ']/div[1]')
                 element = this.driver.findElement(xpath);
                 const actions = this.driver.actions({ async: true });
                 await actions.move({ origin: element }).perform();
                 await this.driver.sleep(3000);
 
-                xpath = By.xpath('/html/body/div/div/div[2]/div/div[2]/div/div[3]/div/div[2]/div/div[2]/div/div[2]/div/div/div/div[' + dayIter + ']/div[' + timeIter + ']/div[1]');
+                xpath = By.xpath('/html/body/div/div[2]/div/div[2]/div/div[3]/div/div[2]/div/div[2]/div/div[2]/div/div/div/div[' + dayIter + ']/div[' + timeIter + ']/div[1]');
                 element = await this.driver.findElement(xpath);
                 await this.driver.executeScript("arguments[0].click();", element);
                 await this.driver.actions().pause(3000).perform();
@@ -55,7 +55,7 @@ class ChooseTutorTime {
           }
         }
       }
-      xpath = By.xpath('/html/body/div/div/div[2]/div/div[1]/div/div/div/div[8]/button');
+      xpath = By.xpath('/html/body/div/div[2]/div/div[1]/div/div/div/div[8]/button');
       element = await this.driver.findElement(xpath);
       await this.driver.executeScript("arguments[0].click();", element);
       await this.driver.actions().pause(3000).perform();

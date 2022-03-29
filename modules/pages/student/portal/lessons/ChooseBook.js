@@ -8,13 +8,13 @@ class ChooseBook {
   async test() {
     try {
       // 교재 선택
-      let xpath = By.xpath('/html/body/div[1]/div/div[2]/div/div[2]/div/div[2]/div/div/div/div/div/div[2]/div[1]/div[2]/div[2]/div/div[1]/div/div/div/div[2]');
+      let xpath = By.xpath('/html/body/div[1]/div[2]/div/div[2]/div/div[2]/div/div/div/div/div/div[2]/div[1]/div[2]/div[2]/div/div[1]/div/div/div/div[2]');
       let element = await this.driver.findElement(xpath);
       await this.driver.executeScript("arguments[0].click();", element);
       await this.driver.actions().pause(3000).perform();
-      
+
       // Click Next Button
-      xpath = By.xpath('/html/body/div[1]/div/div[2]/div/div[1]/div/div/div/div[7]/a[2]');
+      xpath = By.xpath('/html/body/div[1]/div[2]/div/div[1]/div/div/div/div[7]/a[2]');
       element = await this.driver.findElement(xpath);
       await this.driver.executeScript("arguments[0].click();", element);
       await this.driver.actions().pause(3000).perform();
