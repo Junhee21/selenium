@@ -14,8 +14,8 @@ require('dotenv').config();
   driver.manage().window().maximize();
 
   try {
-    // await new SignInTest(driver, process.env.QA3_PAGE).test()
-    await new ReserveLessonTest(driver, process.env.QA3_PAGE).test()
+    await new SignInTest(driver, process.env.QA6_PAGE).test()
+    // await new ReserveLessonTest(driver, process.env.QA6_PAGE).test()
     // await new PrepareTest(driver, process.env.QA3_PAGE).test()
   } catch {
 

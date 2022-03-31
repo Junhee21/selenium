@@ -8,8 +8,7 @@ class ClickSignIn {
   async test() {
     try {
       // Click Sign-In button
-      let xpath = By.xpath('/html/body/div[1]/div[1]/div[1]/nav/div/div[1]/div[2]/div/div[4]/li/a')
-      let element = await this.driver.findElement(xpath);
+      let element = await this.driver.findElement(By.css("a[href='/en/student/auth/sign-in']"));
       await this.driver.executeScript("arguments[0].click();", element);
       await this.driver.actions().pause(3000).perform();
 

@@ -8,16 +8,13 @@ class SignIn {
   async test() {
     try {
       // email 입력
-      let xpath = By.xpath('/html/body/div[1]/div[2]/div/div/div/div/form/div[1]/input');
-      await this.driver.findElement(xpath).sendKeys(process.env.QA_ID);
+      await this.driver.findElement(By.css("input[type='email']")).sendKeys(process.env.QA_ID);
 
       // 비번 입력
-      xpath = By.xpath('/html/body/div[1]/div[2]/div/div/div/div/form/div[2]/input');
-      await this.driver.findElement(xpath).sendKeys(process.env.QA_PW);
+      await this.driver.findElement(By.css("input[type='password']")).sendKeys(process.env.QA_PW);
 
       // 버튼 클릭
-      xpath = By.xpath('/html/body/div[1]/div[2]/div/div/div/div/form/div[3]/button');
-      let element = await this.driver.findElement(xpath);
+      let element = await this.driver.findElement(By.css("button[tabindex='3']"));
       await this.driver.executeScript("arguments[0].click();", element);
       await this.driver.actions().pause(3000).perform();
 
