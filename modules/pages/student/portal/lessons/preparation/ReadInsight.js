@@ -6,11 +6,9 @@ class ReadInsight {
     this.page = page;
   }
   async test() {
-    let xpath = null;
     let element = null;
     try {
-      xpath = By.xpath('/html/body/div/div[4]/div/div[1]/div[3]/div[1]/div[3]/div/div[2]');
-      element = await this.driver.findElement(xpath);
+      element = await this.driver.findElement(By.css("div[class='bg-gray-100 rounded-md items-center cursor-pointer mx-auto mt-24 w-full']"));
       await this.driver.executeScript("arguments[0].click();", element);
       await this.driver.actions().pause(3000).perform();
     } catch {

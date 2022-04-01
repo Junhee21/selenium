@@ -6,10 +6,10 @@ class ClickLessons {
     this.page = page;
   }
   async test() {
+    let element = null
     try {
       // Click 1:1 Lessons
-      let xpath = By.xpath('//*[@id="navbarCollapse"]/div[3]/ul/li[2]/a');
-      let element = await this.driver.findElement(xpath);
+      let element = await this.driver.findElement(By.css('a[href="/en/student/portal/lessons/schedule-enter"]'));
       await this.driver.executeScript("arguments[0].click();", element);
       await this.driver.actions().pause(3000).perform();
 

@@ -7,12 +7,13 @@ class GoPrepare {
     this.page = page;
   }
   async test() {
-    let xpath = null;
-    let element = null;
     try {
-      xpath = By.xpath('/html/body/div[1]/div[3]/div/div[1]/div/div[3]/div[2]/div[2]/div/div[2]/div[1]')
-      element = await this.driver.findElement(xpath);
+      let element = await this.driver.findElement(By.css('div[href="/en/student/portal/lessons/upcoming-lessons"]'));
       await this.driver.executeScript("arguments[0].click();", element);
+      await this.driver.actions().pause(3000).perform();
+
+      let elements = await this.driver.findElements(By.css("div[href$='insight']"));
+      await this.driver.executeScript("arguments[0].click();", elements[0]);
       await this.driver.actions().pause(3000).perform();
     } catch {
       console.log("Error - modules/pages/student/portal/lessons/GoPrepare.js");

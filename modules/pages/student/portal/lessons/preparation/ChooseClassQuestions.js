@@ -6,38 +6,30 @@ class ChooseClassQuestions {
     this.page = page;
   }
   async test() {
-    let xpath = null;
     let element = null;
     try {
-      xpath = By.xpath('/html/body/div/div[4]/div/div[3]/div[3]/div/div/div[1]/div[1]/div[1]/button');
-      element = await this.driver.findElement(xpath);
-      await this.driver.executeScript("arguments[0].click();", element);
+      let buttonElements = await this.driver.findElements(By.css("button[class='appearance-none box-border focus:outline-none cursor-pointer']"));
+      await this.driver.executeScript("arguments[0].click();", buttonElements[4]);
       await this.driver.actions().pause(3000).perform();
 
-      xpath = By.xpath('/html/body/div/div[4]/div/div[3]/div[3]/div/div/div[1]/div[2]/div/div[1]/div[1]/div[1]')
-      element = await this.driver.findElement(xpath);
-      await this.driver.executeScript("arguments[0].click();", element);
+      let checkElement = await this.driver.findElement(By.css("div[class='text-sBody text-primary flex items-center cursor-pointer']"));
+      await this.driver.executeScript("arguments[0].click();", checkElement);
       await this.driver.actions().pause(3000).perform();
 
-      xpath = By.xpath('/html/body/div/div[4]/div/div[3]/div[3]/div/div/div[1]/div[1]/div[2]/button');
-      element = await this.driver.findElement(xpath);
-      await this.driver.executeScript("arguments[0].click();", element);
+      await this.driver.executeScript("arguments[0].click();", buttonElements[5]);
       await this.driver.actions().pause(3000).perform();
 
-      xpath = By.xpath('/html/body/div/div[4]/div/div[3]/div[3]/div/div/div[1]/div[2]/div/div[1]/div[1]/div[1]');
-      element = await this.driver.findElement(xpath);
-      await this.driver.executeScript("arguments[0].click();", element);
+      checkElement = await this.driver.findElement(By.css("div[class='text-sBody text-primary flex items-center cursor-pointer']"));
+      await this.driver.executeScript("arguments[0].click();", checkElement);
       await this.driver.actions().pause(3000).perform();
 
-      xpath = By.xpath('/html/body/div/div[4]/div/div[3]/div[3]/div/div/div[1]/div[1]/div[3]/button');
-      element = await this.driver.findElement(xpath);
-      await this.driver.executeScript("arguments[0].click();", element);
+      await this.driver.executeScript("arguments[0].click();", buttonElements[6]);
       await this.driver.actions().pause(3000).perform();
 
-      xpath = By.xpath('/html/body/div/div[4]/div/div[3]/div[3]/div/div/div[1]/div[2]/div/div[1]/div[1]/div[1]');
-      element = await this.driver.findElement(xpath);
-      await this.driver.executeScript("arguments[0].click();", element);
+      checkElement = await this.driver.findElement(By.css("div[class='text-sBody text-primary flex items-center cursor-pointer']"));
+      await this.driver.executeScript("arguments[0].click();", checkElement);
       await this.driver.actions().pause(3000).perform();
+
     } catch {
       console.log("Error - modules/pages/student/portal/lessons/preparation/ChooseClassQuestions.js");
     } finally {

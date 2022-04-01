@@ -6,18 +6,17 @@ class ClickSortByTutor {
     this.page = page;
   }
   async test() {
-    let xpath = null;
     let element = null;
     try {
-      xpath = By.xpath('/html/body/div[1]/div[2]/div[1]/div[4]/div/div/div/div[1]/div[1]');
-      element = await this.driver.findElement(xpath);
+      element = await this.driver.findElement(By.css('div[href="/en/student/portal/lessons/schedule-enter"]'));
       await this.driver.executeScript("arguments[0].click();", element);
       await this.driver.actions().pause(3000).perform();
 
-      xpath = By.xpath('/html/body/div[1]/div[2]/div[1]/div/div[1]/div[2]/div/div/a');
-      element = await this.driver.findElement(xpath);
+      element = await this.driver.findElement(By.css('a[href="/en/student/portal/lessons/schedule?mode=tutor"]'));
       await this.driver.executeScript("arguments[0].click();", element);
       await this.driver.actions().pause(3000).perform();
+
+      await this.driver.wait(until.urlContains(this.page + '/en/student/portal/lessons/schedule?mode=tutor'), 10000);
     } catch {
       console.log("Error - modules/pages/student/portal/lessons/ClickSortByTutor.js")
     } finally {

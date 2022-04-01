@@ -9,21 +9,18 @@ class WatchVideo {
     let xpath = null;
     let element = null;
     try {
-      xpath = By.xpath('/html/body/div/div[4]/div/div[1]/div[1]/div/div/div[3]/div');
-      element = await this.driver.findElement(xpath);
-      await this.driver.executeScript("arguments[0].click();", element);
+      let elements = await this.driver.findElements(By.css("div[class='whitespace-nowrap text-gray-600']"));
+      await this.driver.executeScript("arguments[0].click();", elements[1]);
       await this.driver.actions().pause(3000).perform();
 
       await this.driver.switchTo().frame(0);
 
-      xpath = By.xpath('/html/body/div/div')
-      element = await this.driver.findElement(xpath);
+      element = await this.driver.findElement(By.id('movie_player'));
       await this.driver.executeScript("arguments[0].click();", element);
       await this.driver.actions().pause(3000).perform();
 
       while (true) {
-        xpath = By.xpath('/html/body/div/div/div[31]/div[2]/div[1]/button')
-        element = await this.driver.findElement(xpath);
+        element = await this.driver.findElement(By.css('button[class="ytp-play-button ytp-button"]'));
         let title = await element.getAttribute('title');
         if (title === 'Replay')
           break;

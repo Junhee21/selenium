@@ -6,11 +6,9 @@ class OutPreparation {
     this.page = page;
   }
   async test() {
-    let xpath = null;
     let element = null;
     try {
-      xpath = By.xpath('/html/body/div/div[2]/div/div[1]/div');
-      element = await this.driver.findElement(xpath);
+      element = await this.driver.findElement(By.css("div[class='flex flex-row cursor-pointer']"));
       await this.driver.executeScript("arguments[0].click();", element);
       await this.driver.actions().pause(3000).perform();
       await this.driver.sleep(10000);

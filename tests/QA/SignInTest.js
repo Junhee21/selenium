@@ -12,7 +12,7 @@ class SignInTest {
 
   async test() {
     try {
-      console.log('Test [Sign-in in QA2]\n\n');
+      console.log('Test [Sign-in]');
       await new ConnectHomePage(this.driver, this.page).test();
       await new SignInFirstQa(this.driver, this.page).test();
       await new ClickSignIn(this.driver, this.page).test();
