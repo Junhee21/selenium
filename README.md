@@ -1,11 +1,11 @@
 # 실행
 
-터미널에서 원하는 폴더에 들어간뒤
+터미널에서 원하는 폴더에 들어간뒤,
 <br/>
 <br/>
 git clone https://github.com/junhee-won-ringle/selenium
 <br/>
-  -> 파일이 받아짐
+-> 파일이 받아짐
 
 <br/>
 <br/>
@@ -33,7 +33,6 @@ QA_FIRST_ID="QA 처음 아이디"
 
 QA_FIRST_PW="QA 처음 비밀번호"
 
-
 <br/>
 <br/>
 node app.js
@@ -43,10 +42,10 @@ node app.js
  <br/>
  <br/>
 
-
-
 # Selenium
+
 https://www.selenium.dev/
 
 ## How to click button
+
 https://stackoverflow.com/questions/11947832/how-to-click-an-element-in-selenium-webdriver-using-javascript
